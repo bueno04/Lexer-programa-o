@@ -26,9 +26,37 @@ class Lexer {
   advance() {
     try {
       this.currentChar = this.text[this.index++];
+      this.updateCharIfCustomOperator()
     } catch (e) {
       console.log(e);
       this.currentChar = undefined;
+    }
+  }
+
+    updateCharIfCustomOperator(){
+    const customOperators = [
+        'mais',
+        'menos',
+        'vezes',
+        'dividir',
+        'divisaoInteira',
+        'resto',
+        'if',
+        'else',
+        'while',
+        'for'
+    ]
+
+    for(const operator of customOperators){
+
+      if(this.currentChar === operator[0]){
+        const portion = this.text.slice(this.index - 1, (this.index + (operator.length - 1)))
+        
+        if(portion !== operator) continue
+
+        this.currentChar = operator
+        this.index += operator.length - 1
+      }
     }
   }
 

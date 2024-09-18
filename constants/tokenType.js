@@ -34,12 +34,12 @@ const TOKEN = {
     LPAREN: "(",
     RPAREN: ")",
 
-    PLUS: "+",
-    MINUS: "-",
-    MULTIPLY: "*",
-    DIVIDE: "/",
-    INT_DIVIDE: "//",
-    MOD: "%",
+    PLUS: "mais",
+    MINUS: "menos",
+    MULTIPLY: "vezes",
+    DIVIDE: "dividir",
+    INT_DIVIDE: "divisaoInteira",
+    MOD: "resto",
 
     POW: "**",
     NTH_ROOT: "#",
@@ -61,6 +61,12 @@ const TOKEN = {
     E: "e",
     PI: "pi",
   },
+  CONDITIONAL: {
+    IF: "if",
+    ELSE: "else",
+    WHILE: "while",
+    FOR: "for",
+  }
 };
 
 module.exports = TOKEN;
